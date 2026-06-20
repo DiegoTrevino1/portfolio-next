@@ -43,7 +43,7 @@ export default function Skills({ sectionRef }: { sectionRef: RefObject<HTMLEleme
             transition={{ duration: 0.4, delay: gi * 0.08 }}
           >
             <p className="mono-text text-sm mb-4" style={{ color: C.accent }}>
-              // {group.label}
+              {'// '}{group.label}
             </p>
             <motion.div
               className="flex flex-wrap gap-2"
