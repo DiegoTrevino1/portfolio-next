@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: #06060B;
+  font-family: var(--font-inter), sans-serif;
+  color: #F3F3F6;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+html { scroll-behavior: smooth; }
+
+.display-text { font-family: var(--font-space-grotesk), sans-serif; }
+.mono-text    { font-family: var(--font-ibm-plex-mono), monospace; }
+
+section[data-section] { scroll-margin-top: 100px; }
+
+.star {
+  translate: calc(var(--mx, 0) * var(--depth, 0.5) * -50px)
+             calc(var(--my, 0) * var(--depth, 0.5) * -50px);
+  transition: translate 0.6s ease-out;
+}
+
+.particle {
+  translate: calc(var(--mx, 0) * var(--depth, 0.5) * -90px)
+             calc(var(--my, 0) * var(--depth, 0.5) * -90px);
+  transition: translate 0.6s ease-out;
+  animation: drift linear infinite;
+}
+
+@keyframes drift {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(30px, -40px); }
+  100% { transform: translate(0, 0); }
+}
+
+.glitch-layer { position: absolute; inset: 0; user-select: none; pointer-events: none; }
+
+@keyframes glitch1 {
+  0%, 92%, 100% { opacity: 0; translate: 0 0; }
+  93% { opacity: 0.55; translate: 3px -1px; }
+  95% { opacity: 0.4; translate: -3px 1px; }
+  97% { opacity: 0; translate: 1px 1px; }
+}
+@keyframes glitch2 {
+  0%, 90%, 100% { opacity: 0; translate: 0 0; }
+  91% { opacity: 0.45; translate: -3px 1px; }
+  94% { opacity: 0.35; translate: 2px -1px; }
+  96% { opacity: 0; translate: -1px 0; }
+}
+
+.glitch1 { animation: glitch1 7s infinite; }
+.glitch2 { animation: glitch2 9s infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .star, .particle, .glitch1, .glitch2 {
+    animation: none !important;
+    transition: none !important;
+    translate: 0 0 !important;
   }
 }
