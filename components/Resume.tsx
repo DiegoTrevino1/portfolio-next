@@ -5,7 +5,7 @@ import { C } from '@/lib/palette';
 import { RESUME_DOCS } from '@/lib/data';
 import type { RefObject } from 'react';
 
-export default function Resume({ sectionRef }: { sectionRef: RefObject<HTMLElement | null> }) {
+export default function Resume({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
   return (
     <section
       ref={sectionRef}

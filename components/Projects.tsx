@@ -14,7 +14,7 @@ const cardVariants = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.45 } },
 };
 
-export default function Projects({ sectionRef }: { sectionRef: RefObject<HTMLElement | null> }) {
+export default function Projects({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
   return (
     <section
       ref={sectionRef}

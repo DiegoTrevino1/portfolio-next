@@ -26,7 +26,7 @@ const fadeUp = {
 };
 
 interface HeroProps {
-  sectionRef: RefObject<HTMLElement | null>;
+  sectionRef: RefObject<HTMLElement>;
   onResumeClick: () => void;
 }
 

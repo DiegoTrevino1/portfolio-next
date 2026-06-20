@@ -4,7 +4,7 @@ import { C } from '@/lib/palette';
 import { EXPERIENCE } from '@/lib/data';
 import type { RefObject } from 'react';
 
-export default function Experience({ sectionRef }: { sectionRef: RefObject<HTMLElement | null> }) {
+export default function Experience({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
   return (
     <section
       ref={sectionRef}

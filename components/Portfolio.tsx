@@ -32,7 +32,7 @@ export default function Portfolio() {
   const projectsRef = useRef<HTMLElement>(null);
   const expRef      = useRef<HTMLElement>(null);
 
-  const sectionRefs: Record<SectionId, RefObject<HTMLElement | null>> = {
+  const sectionRefs: Record<SectionId, RefObject<HTMLElement>> = {
     about:      aboutRef,
     skills:     skillsRef,
     resume:     resumeRef,

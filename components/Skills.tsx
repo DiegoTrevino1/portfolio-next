@@ -13,7 +13,7 @@ const tagItem = {
   show:   { opacity: 1, y: 0, transition: { duration: 0.3 } },
 };
 
-export default function Skills({ sectionRef }: { sectionRef: RefObject<HTMLElement | null> }) {
+export default function Skills({ sectionRef }: { sectionRef: RefObject<HTMLElement> }) {
   return (
     <section
       ref={sectionRef}
