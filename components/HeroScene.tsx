@@ -6,15 +6,20 @@ import * as THREE from 'three';
 // Module-level state — read each frame, no re-renders needed
 const mouse = { x: 0, y: 0 };
 
+const SPHERE_BASE = [-7, 2.5] as const;
+const TORUS_BASE  = [8, -2.8] as const;
+
 function WireSphere() {
   const ref = useRef<THREE.Mesh>(null);
   useFrame(() => {
     if (!ref.current) return;
     ref.current.rotation.y += 0.005;
     ref.current.rotation.x += (mouse.y * 0.2 - ref.current.rotation.x) * 0.05;
+    ref.current.position.x += (SPHERE_BASE[0] + mouse.x * 0.8 - ref.current.position.x) * 0.05;
+    ref.current.position.y += (SPHERE_BASE[1] + mouse.y * -0.5 - ref.current.position.y) * 0.05;
   });
   return (
-    <mesh ref={ref} position={[-7, 2.5, 0]}>
+    <mesh ref={ref} position={[SPHERE_BASE[0], SPHERE_BASE[1], 0]}>
       <sphereGeometry args={[1.5, 18, 18]} />
       <meshBasicMaterial wireframe color="#A78BFA" transparent opacity={0.65} />
     </mesh>
@@ -28,9 +33,11 @@ function WireTorus() {
     ref.current.rotation.z += 0.003;
     ref.current.rotation.y += 0.004;
     ref.current.rotation.x += (mouse.y * 0.12 - ref.current.rotation.x) * 0.03;
+    ref.current.position.x += (TORUS_BASE[0] + mouse.x * -0.8 - ref.current.position.x) * 0.04;
+    ref.current.position.y += (TORUS_BASE[1] + mouse.y * 0.5 - ref.current.position.y) * 0.04;
   });
   return (
-    <mesh ref={ref} position={[8, -2.8, 0]} rotation={[0.3, 0.2, 0]}>
+    <mesh ref={ref} position={[TORUS_BASE[0], TORUS_BASE[1], 0]} rotation={[0.3, 0.2, 0]}>
       <torusGeometry args={[1.4, 0.4, 10, 44]} />
       <meshBasicMaterial wireframe color="#67E8F9" transparent opacity={0.55} />
     </mesh>

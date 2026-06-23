@@ -81,7 +81,7 @@ export default function Hero({ sectionRef, onResumeClick }: HeroProps) {
 
         {/* Name with glitch */}
         <motion.div variants={fadeUp} style={{ position: 'relative', display: 'inline-block' }}>
-          <h1 className="display-text" style={{ ...nameStyle, color: C.text }}>
+          <h1 className="display-text name-iridescent" style={nameStyle}>
             {NAME.toUpperCase()}
           </h1>
           <h1

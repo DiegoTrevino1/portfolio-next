@@ -39,6 +39,30 @@ section[data-section] { scroll-margin-top: 100px; }
 
 .glitch-layer { position: absolute; inset: 0; user-select: none; pointer-events: none; }
 
+@keyframes iridescent {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.name-iridescent {
+  background: linear-gradient(
+    90deg,
+    #c4b5fd,
+    #67e8f9,
+    #f0abfc,
+    #fbbf24,
+    #c4b5fd,
+    #67e8f9,
+    #f0abfc
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: iridescent 3s linear infinite;
+}
+
 @keyframes glitch1 {
   0%, 92%, 100% { opacity: 0; translate: 0 0; }
   93% { opacity: 0.55; translate: 3px -1px; }
