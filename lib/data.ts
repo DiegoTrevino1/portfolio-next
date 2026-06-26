@@ -21,7 +21,7 @@ export const SKILL_GROUPS = [
 ];
 
 export const RESUME_DOCS = [
-  { title: 'Resume',       desc: 'One-page overview of my education, experience, and skills.', href: '#' },
+  { title: 'Resume',       desc: 'One-page overview of my education, experience, and skills.', href: '/DiegoResume.pdf' },
   { title: 'Cover Letter', desc: 'A short letter introducing myself for a specific role.',       href: '#' },
 ];
 
