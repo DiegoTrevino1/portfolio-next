@@ -31,7 +31,7 @@ export const PROJECTS = [
     desc: "Full-stack educational web app for CWU's Computer Architecture course. Students master cache memory mapping through interactive game modes with AI-generated hints — 20+ users, 95% showed measurable progress.",
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Claude AI', 'Vercel'],
     repo: 'https://github.com/DiegoTrevino1',
-    demo: '#',
+    demo: 'https://bitwise-uad2.vercel.app/',
   },
   {
     title: 'Valley Web Design',
