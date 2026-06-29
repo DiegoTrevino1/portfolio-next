@@ -112,7 +112,7 @@ export default function Hero({ sectionRef, onResumeClick }: HeroProps) {
             letterSpacing: '0.04em',
           }}
         >
-          Full-Stack Software Engineer · CWU Class of 2026
+          Full-Stack Software Engineer · Class of 2026
         </motion.p>
 
         {/* Bio */}
