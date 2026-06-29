@@ -38,7 +38,7 @@ export const PROJECTS = [
     desc: 'Freelance web design business serving Yakima Valley small businesses with bilingual (English/Spanish) marketing sites. Founded and own the full process end-to-end.',
     tags: ['TypeScript', 'Node.js', 'MongoDB'],
     repo: 'https://github.com/DiegoTrevino1',
-    demo: '#',
+    demo: 'https://yakima-web.vercel.app/',
   },
   {
     title: 'Emergency Dispatch System',
