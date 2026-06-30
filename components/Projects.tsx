@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Plus } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { C } from '@/lib/palette';
 import { PROJECTS } from '@/lib/data';
 import type { RefObject } from 'react';
@@ -50,11 +50,14 @@ export default function Projects({ sectionRef }: { sectionRef: RefObject<HTMLEle
             className="p-6 rounded-2xl flex flex-col"
             style={{ border: `1px solid ${C.border}`, background: C.surface }}
           >
-            <div
-              className="rounded-xl mb-5 h-28 flex items-center justify-center display-text text-xl"
-              style={{ background: C.surfaceAlt, color: C.textMuted }}
-            >
-              {p.title.split(' ').map((w) => w[0]).join('')}
+            <div className="rounded-xl mb-5 h-28 overflow-hidden">
+              {p.image
+                ? <img src={p.image} alt={p.title} className="w-full h-full object-cover" />
+                : <div className="w-full h-full flex items-center justify-center display-text text-xl"
+                       style={{ background: C.surfaceAlt, color: C.textMuted }}>
+                    {p.title.split(' ').map((w: string) => w[0]).join('')}
+                  </div>
+              }
             </div>
             <h3 className="display-text text-lg font-semibold mb-2">{p.title}</h3>
             <p className="text-sm mb-4 flex-1" style={{ color: C.textMuted }}>
@@ -82,14 +85,6 @@ export default function Projects({ sectionRef }: { sectionRef: RefObject<HTMLEle
           </motion.div>
         ))}
 
-        <motion.div
-          variants={cardVariants}
-          className="p-6 rounded-2xl flex flex-col items-center justify-center text-center"
-          style={{ border: `1px dashed ${C.border}`, color: C.textMuted, minHeight: '220px' }}
-        >
-          <Plus size={20} className="mb-3" />
-          <p className="mono-text text-sm">Add your next project here</p>
-        </motion.div>
       </motion.div>
     </section>
   );
